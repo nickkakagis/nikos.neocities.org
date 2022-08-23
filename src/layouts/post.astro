@@ -1,0 +1,12 @@
+---
+const { frontmatter, compiledContent } = Astro.props;
+import Layout from "./main.astro";
+const content = compiledContent();
+---
+
+<Layout
+	title={frontmatter.title}
+	desc={frontmatter.desc}
+	tags={frontmatter.tags}
+	set:html={content}
+/>
